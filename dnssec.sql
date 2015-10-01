@@ -16,3 +16,8 @@ created datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
 PRIMARY KEY (id)
 ) ENGINE=InnoDB;
 
+CREATE TABLE missing (
+id int not null auto_increment,
+domain varchar(255) NOT NULL,
+PRIMARY KEY (id)
+) ENGINE=InnoDB;
