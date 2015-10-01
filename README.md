@@ -1,6 +1,7 @@
 # ispconfig-dnssec
 
-This project is written in bash and requires a mysql db
+This project is written in bash and requires a mysql db.
+
 Project ONLY testet on debian with latest ispconfig installed.
 
 Setup is that NS2 mirros dns from NS1.
@@ -25,6 +26,7 @@ import dnssec.sql into database
 	mysql -d dnssec -u dnssec -p < dnssec.sql
 
 edit the config.sh file
+
 remember to edit all dnssec-* files as well so it knows where you put config.sh
 
 insert the updater to your crontab ( nano /etc/crontab )
