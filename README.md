@@ -4,11 +4,13 @@ This project is written in bash and requires a mysql db
 Project ONLY testet on debian with latest ispconfig installed.
 
 Setup is that NS2 mirros dns from NS1.
+
 	https://www.howtoforge.com/how-to-run-your-own-dns-servers-primary-and-secondary-with-ispconfig-3-debian-squeeze
 
 This should be done on NS1
 
 create a database
+
 	CREATE DATABASE dnssec;
 	GRANT SELECT ON dnssec.* TO 'dnssecuser'@'localhost' IDENTIFIED BY 'topsecretpassword';
 	GRANT ALL ON  dnssec.* TO 'dnssecuser'@'localhost'; 
