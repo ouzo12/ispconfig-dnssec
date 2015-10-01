@@ -9,6 +9,10 @@ Setup is that NS2 mirros dns from NS1.
 
 This should be done on NS1
 
+install haveged
+
+	apt-get install haveged
+
 create a database
 
 	CREATE DATABASE dnssec;
