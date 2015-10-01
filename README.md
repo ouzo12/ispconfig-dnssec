@@ -29,7 +29,9 @@ insert the updater to your crontab ( nano /etc/crontab )
 
 
 use dnssec-create.sh to create dnssec keys for a domain
+
 use dnssec-mysqlctl.sh to get info from mysql
+
 use dnssec-update.sh to update bind files and update zones that uses dnssec.
 
 
@@ -39,13 +41,17 @@ This should be done on NS2
 	chown bind:bind /etc/bind/pri.* <- need a crontab for this coming soon new zones will be owned by root
 
 Copy bind template to custom folder (YES slave to master)
+
 	cp /usr/local/ispconfig/server/conf/bind_named.conf.local.slave /usr/local/ispconfig/server/conf-custom/bind_named.conf.local.master
 
 Edit the file
+
 	nano /usr/local/ispconfig/server/conf-custom/bind_named.conf.local.master
 
 after "type slave;" insert following line (change ip to your ns1 ip)
+
 	masters {1.2.3.4;};
 
 insert the ns2-cron.sh to crontab ( nano /etc/crontab )
+
 	*/2	* * * *     root    /root/ns2-cron.sh >/dev/null 2>&1
