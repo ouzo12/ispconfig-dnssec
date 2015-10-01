@@ -44,7 +44,7 @@ use dnssec-update.sh to update bind files and update zones that uses dnssec.
 This should be done on NS2
 
 	chown bind:bind /etc/bind
-	chown bind:bind /etc/bind/pri.* <- need a crontab for this coming soon new zones will be owned by root
+	chown bind:bind /etc/bind/pri.*
 
 Copy bind template to custom folder (YES slave to master)
 
