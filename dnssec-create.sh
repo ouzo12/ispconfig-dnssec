@@ -9,7 +9,7 @@ source $conffile
 
 mysqlcheck=`mysql -u $dbuser --password=$dbpass -h $dbhost -Bse "use $dbase; show tables;" | wc -c`
 if [ "$mysqlcheck" = 0 ];then
- echo "could not connect to dataase"
+ echo "could not connect to database"
  exit 0
 fi
 mysqlcheck=`mysql -u $dbuser --password=$dbpass -h $dbhost -Bse "use $dbase; select * from domains where domain='$1';" | wc -c`
