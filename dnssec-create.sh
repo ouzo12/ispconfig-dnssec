@@ -37,7 +37,7 @@ if [ ! $1 = "" ];then
   dnssec-signzone -A -3 $(head -c 1000 /dev/random | sha1sum | cut -b 1-16) -N INCREMENT -o $1 -t pri.$1
  fi
 fi
-serial=`cat pri.tja-data.dk |grep "serial," |awk {' print $1 '}`
+serial=`cat pri.$1 |grep "serial," |awk {' print $1 '}`
 echo ""
 dnssechelp=`head -1 dsset-$1.`
 dnssecid=`echo $dnssechelp | awk {' print $4 '}`
