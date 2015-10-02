@@ -23,7 +23,7 @@ create a database
 
 import dnssec.sql into database
 
-	mysql -d dnssec -u dnssec -p < dnssec.sql
+	mysql -D dnssec -u dnssec -p < dnssec.sql
 
 edit the config.sh file
 
