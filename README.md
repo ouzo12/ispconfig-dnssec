@@ -8,7 +8,16 @@ Setup is that NS2 mirros dns from NS1.
 
 	https://www.howtoforge.com/how-to-run-your-own-dns-servers-primary-and-secondary-with-ispconfig-3-debian-squeeze
 
-This should be done on NS1
+Enable dnssec on both/all nameservers
+
+	nano /etc/bind/named.conf.options
+insert if the lines dows not exists
+
+	dnssec-enable yes;
+	dnssec-validation yes;
+	dnssec-lookaside auto;
+
+This should be done on NS1 :
 
 install haveged
 
@@ -41,7 +50,7 @@ use dnssec-mysqlctl.sh to get info from mysql
 use dnssec-update.sh to update bind files and update zones that uses dnssec.
 
 
-This should be done on NS2
+This should be done on NS2 :
 
 	chown bind:bind /etc/bind
 	chown bind:bind /etc/bind/pri.*
