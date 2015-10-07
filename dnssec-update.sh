@@ -34,7 +34,9 @@ if [ ! "$md5check" = "OK" ];then
  # echo $ACTIVE
   domain=`echo $ACTIVE | sed 's/:/ /g' | awk {' print $1 '}`
   serial=`echo $ACTIVE | sed 's/:/ /g' | awk {' print $2 '}`
+  cd $bindpath
   fserial=`/usr/sbin/named-checkzone $domain $bindpath/$filespre$domain | egrep -ho '[0-9]{10}'`
+  cd $curpath
    if [ ! "$serial" = "$fserial" ];then
     echo "need update"
      includecheck=`cat $bindpath/$filespre$domain |grep "INCLUDE" |wc -l`
