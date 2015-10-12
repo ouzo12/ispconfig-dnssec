@@ -50,11 +50,9 @@ if [ ! "$md5check" = "OK" ];then
 
     /usr/sbin/dnssec-signzone -A -3 $(head -c 1000 /dev/random | sha1sum | cut -b 1-16) -N increment -o $domain -t $bindpath/$filespre$domain
     mysql -u $dbuser --password=$dbpass -h $dbhost -Bse "use $dbase; update domains set serial='$fserial' where domain='$domain';"
-    sed -i "s/$filespre$domain\"/$filespre$domain.signed\"/g" $namedconf
+    #sed -i "s/$filespre$domain\"/$filespre$domain.signed\"/g" $namedconf
    fi
-#echo $domain
-#echo $serial
-#echo $fserial
+  sed -i "s/$filespre$domain\"/$filespre$domain.signed\"/g" $namedconf
 done
 
 echo "done"
